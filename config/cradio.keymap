@@ -13,7 +13,6 @@
 
 / {
     behaviors {
-        // Balanced flavor ensures comfortable home-row mod usage
         hm: home_row_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -62,18 +61,18 @@
 
         layer_1 {
             bindings = <
-&kp ESC   &kp N7  &kp N8       &kp N9  &kp PRCNT      &msc SCRL_UP   &mkp MB1  &kp UP    &mkp MB2  &kp ENTER
-&kp SLSH  &kp N4  &hm RSFT N5  &kp N6  &kp SCLN       &msc SCRL_DOWN &kp LEFT   &kp DOWN  &kp RIGHT  &kp DEL
-&kp N0    &kp N1  &kp N2       &kp N3  &kp DOT        &msc SCRL_LEFT &msc SCRL_RIGHT &none &none    &kp LA(ENTER)
+&kp ESC   &kp N7  &kp N8       &kp N9  &kp PRCNT      &msc SCRL_Y(10)   &mkp MB1  &kp UP    &mkp MB2  &kp ENTER
+&kp SLSH  &kp N4  &hm RSFT N5  &kp N6  &kp SCLN       &msc SCRL_Y(-10) &kp LEFT   &kp DOWN  &kp RIGHT  &kp DEL
+&kp N0    &kp N1  &kp N2       &kp N3  &kp DOT        &msc SCRL_X(-10) &msc SCRL_X(10) &none &none    &kp LA(ENTER)
                                &to L0  &kp SPC        &kp BSPC       &to L2
             >;
         };
 
         layer_2 {
             bindings = <
-&kp ESC       &kp LC(W)  &none  &kp GRAVE  &kp TILDE     &msc SCRL_UP   &mkp MB1       &mmv MOVE_UP   &mkp MB2        &kp PG_UP
-&kp LC(A)     &none      &none  &none      &kp CAPS      &msc SCRL_DOWN &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT  &kp ENTER
-&kp LC(Z)     &kp LC(X)  &kp LC(C) &kp LC(V) &kp PSCRN   &msc SCRL_LEFT &msc SCRL_RIGHT &none          &none            &kp LALT
+&kp ESC       &kp LC(W)  &none  &kp GRAVE  &kp TILDE     &msc SCRL_Y(10)   &mkp MB1       &mmv MOVE_Y(-100)   &mkp MB2        &kp PG_UP
+&kp LC(A)     &none      &none  &none      &kp CAPS      &msc SCRL_Y(-10) &mmv MOVE_X(-100)  &mmv MOVE_Y(100) &mmv MOVE_X(100)  &kp ENTER
+&kp LC(Z)     &kp LC(X)  &kp LC(C) &kp LC(V) &kp PSCRN   &msc SCRL_X(-10) &msc SCRL_X(10) &none          &none            &kp LALT
                                 &to L1     &kp SPC       &kp BSPC       &to L2
             >;
         };
