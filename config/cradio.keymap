@@ -22,22 +22,12 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
-        
-        lt_layer: layer_taps {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            flavor = "balanced";
-            bindings = <&mo>, <&kp>;
-        };
     };
 
     combos {
         compatible = "zmk,combos";
         timeout-ms = <50>;
 
-        // Key positions for standard Sweep layout (0 to 33)
         combo_tab { key-positions = <20 21>; bindings = <&kp TAB>; layers = <L0 L4>; };
         combo_caps { key-positions = <23 25>; bindings = <&kp CAPS>; layers = <L0>; };
         combo_enter { key-positions = <32 9>; bindings = <&kp ENTER>; layers = <L0>; };
@@ -66,7 +56,7 @@
 &kp Q  &kp W  &kp E       &kp R  &kp T          &kp Y  &kp U       &kp I       &kp O  &kp P
 &kp A  &kp S  &hm LSHFT D &kp F  &hm LCTL G     &kp H  &hm LCTL J  &hm LSHFT K &kp L  &kp SQT
 &kp Z  &kp X  &kp C       &kp V  &kp B          &kp N  &kp M       &kp COMMA   &kp DOT &kp SLSH
-                    &lt_layer L1 FIRST_LIGHT    &kp SPC  &kp BSPC    &lt_layer L2 FIRST_LIGHT
+                          &mo L1 &kp SPC        &kp BSPC &mo L2
             >;
         };
 
@@ -91,7 +81,7 @@
         layer_3 {
             bindings = <
 &none  &kp LC(EQUAL) &kp C_VOL_UP &kp C_BRI_UP &none     &none  &none    &none  &none  &none
-&none  &kp LC(MINUS) &kp C_VOL_DN &kp C_BRI_DN &none     &none  &none    &none  &none  &kp C_PWR // Map Wake safely to Power
+&none  &kp LC(MINUS) &kp C_VOL_DN &kp C_BRI_DN &none     &none  &none    &none  &none  &kp C_PWR
 &none  &kp LCTRL     &kp LALT     &kp DEL      &none     &none  &to L4   &none  &none  &none
                                   &to L1       &kp SPC   &kp BSPC &to L2
             >;
